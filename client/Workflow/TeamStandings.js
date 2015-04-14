@@ -1,6 +1,6 @@
 Meteor.subscribe('Teams');
 
-Template.leaderboard.helpers({
+Template.standingsPage.helpers({
     'team': function(){
         return Teams.find(
             {}, {sort: {TeamPts: -1, PointDifferential: 1}}

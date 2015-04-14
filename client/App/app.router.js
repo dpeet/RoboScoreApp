@@ -11,21 +11,20 @@ Router.configure({
 });
 
 
-Router.route('/', function () {
-  this.render('leaderboard');
+//Router.route('/', function () {
+//  this.render('standingsPage');
+//});
+//
+
+
+
+Router.map(function(){
+  this.route('homeRoute', {
+    path: '/',
+    template: "standingsPage"
+  });
 });
 
 Router.route('/standings', function () {
-  this.render('leaderboard');
+  this.render('standingsPage');
 });
-
-//
-//Router.map(function(){
-//  this.route('homeRoute', {
-//    path: '/',
-//    template: "TeamStandings",
-//    waitOn: function(){
-//      return Meteor.subscribe('Teams');
-//    }
-//  });
-//});

@@ -3,10 +3,13 @@
 </head>
 
 <template name="appLayout">
-  <!--<header id="navbarHeader">-->
-    <!--{{> yield region='header' }}-->
-  <!--</header>-->
+  <header id="navbarHeader">
+    {{> yield region='header' }}
+  </header>
   <div id="mainPanel">
     {{> yield }}
   </div>
+  <!--<footer id="navbarFooter">-->
+    <!--{{> yield region='footer' }}-->
+  <!--</footer>-->
 </template>

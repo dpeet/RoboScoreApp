@@ -46,6 +46,6 @@ Meteor.startup(function () {
       });
     }
     console.log('12 records successfully added to Teams collection.');
-    console.log(Teams.find().fetch());
+    //console.log(Teams.find().fetch());
     console.log('Teams collection initialized and ready.');
 });
