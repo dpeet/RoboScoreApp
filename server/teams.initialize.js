@@ -8,32 +8,29 @@ Meteor.startup(function () {
     var teamdata = [
       {
         "TeamNum"		:"1",
-        "TeamName"		:"Aes Sedai",
-        "W":0,
-        "L":0,
-        "T":0
+        "TeamName"		:"Aes Sedai"
       },
 
-      {"TeamNum":"2", "TeamName":"Band of the Red Hand", "W":1, "L":0, "T":0},
-      {"TeamNum":"3", "TeamName":"Children of the Light", "W":0, "L":1, "T":0},
-      {"TeamNum":"4", "TeamName":"Warders", "W":0, "L":0, "T":1},
-      {"TeamNum":"5", "TeamName":"Manetheron", "W":0, "L":0, "T":18},
-      {"TeamNum":"6", "TeamName":"Ashaman", "W":0, "L":0, "T":0},
-      {"TeamNum":"7", "TeamName":"Ogiers", "W":0, "L":0, "T":0},
-      {"TeamNum":"8", "TeamName":"Aiel", "W":0, "L":0, "T":0},
-      {"TeamNum":"9", "TeamName":"Wisdoms", "W":0, "L":0, "T":0},
-      {"TeamNum":"10", "TeamName":"Greymen", "W":0, "L":0, "T":0},
-      {"TeamNum":"11", "TeamName":"Darkfriends", "W":0, "L":0, "T":0},
-      {"TeamNum":"12", "TeamName":"Trollocs", "W":0, "L":0, "T":0}
+      {"TeamNum":"2", "TeamName":"Band of the Red Hand"},
+      {"TeamNum":"3", "TeamName":"Children of the Light"},
+      {"TeamNum":"4", "TeamName":"Warders"},
+      {"TeamNum":"5", "TeamName":"Manetheron"},
+      {"TeamNum":"6", "TeamName":"Ashaman"},
+      {"TeamNum":"7", "TeamName":"Ogiers"},
+      {"TeamNum":"8", "TeamName":"Aiel"},
+      {"TeamNum":"9", "TeamName":"Wisdoms"},
+      {"TeamNum":"10", "TeamName":"Greymen"},
+      {"TeamNum":"11", "TeamName":"Darkfriends"},
+      {"TeamNum":"12", "TeamName":"Trollocs"}
     ];
 
     for (var i = 0; i < teamdata.length; i++) {
 		Teams.insert({
 			TeamNum:	teamdata[i].TeamNum,
 			TeamName:	teamdata[i].TeamName,
-			W:  		teamdata[i].W,
-			L:			teamdata[i].L,
-			T:			teamdata[i].T,
+			W:  		0,
+			L:			0,
+			T:			0,
 			TeamPts:	0,
 			PointsScored:	0,
 			PointsAgainst:	0,
@@ -49,7 +46,7 @@ Meteor.startup(function () {
 	Games.remove({});
     console.log('No records in Games collection.  Adding temp games');
 
-	teamdata = Teams.find().fetch();
+	teamdata = Teams.find({}).fetch();
 
     var gamedata = [
       {
@@ -65,9 +62,9 @@ Meteor.startup(function () {
 
       {"Field":2, "HomeTeam":teamdata[2]._id, "HomeScore":0, "AwayTeam":teamdata[3]._id, "AwayScore":3, "Started":true, "Final":true, "ScheduledTime":new Date()},
       {"Field":3, "HomeTeam":teamdata[4]._id, "HomeScore":2, "AwayTeam":teamdata[5]._id, "AwayScore":1, "Started":true, "Final":true, "ScheduledTime":new Date()},
-      {"Field":4, "HomeTeam":teamdata[0]._id, "HomeScore":4, "AwayTeam":teamdata[2]._id, "AwayScore":2, "Started":true, "Final":true, "ScheduledTime":new Date()},
-      {"Field":5, "HomeTeam":teamdata[1]._id, "HomeScore":5, "AwayTeam":teamdata[3]._id, "AwayScore":5, "Started":true, "Final":false, "ScheduledTime":new Date()},
-      {"Field":6, "HomeTeam":teamdata[4]._id, "HomeScore":3, "AwayTeam":teamdata[5]._id, "AwayScore":3, "Started":true, "Final":true, "ScheduledTime":new Date()},
+      {"Field":4, "HomeTeam":teamdata[6]._id, "HomeScore":4, "AwayTeam":teamdata[7]._id, "AwayScore":2, "Started":true, "Final":true, "ScheduledTime":new Date()},
+      {"Field":5, "HomeTeam":teamdata[8]._id, "HomeScore":5, "AwayTeam":teamdata[9]._id, "AwayScore":5, "Started":true, "Final":false, "ScheduledTime":new Date()},
+      {"Field":6, "HomeTeam":teamdata[10]._id, "HomeScore":3, "AwayTeam":teamdata[11]._id, "AwayScore":3, "Started":true, "Final":true, "ScheduledTime":new Date()},
       {"Field":1, "HomeTeam":teamdata[0]._id, "HomeScore":0, "AwayTeam":teamdata[3]._id, "AwayScore":0, "Started":true, "Final":false, "ScheduledTime":new Date()},
       {"Field":2, "HomeTeam":teamdata[1]._id, "HomeScore":5, "AwayTeam":teamdata[4]._id, "AwayScore":3, "Started":true, "Final":false, "ScheduledTime":new Date()},
       {"Field":3, "HomeTeam":teamdata[2]._id, "HomeScore":2, "AwayTeam":teamdata[5]._id, "AwayScore":1, "Started":true, "Final":true, "ScheduledTime":new Date()},
@@ -94,7 +91,7 @@ Meteor.startup(function () {
 
 	console.log('Adjusting teams based on games collection');
 
-	gamedata = Games.find().fetch();
+	gamedata = Games.find({}).fetch();
 
 	var w = 0;
 	var l = 0;
@@ -120,7 +117,7 @@ Meteor.startup(function () {
 				t = 1;
 			}
 
-			Games.update(
+			Teams.update(
 				{ "_id" : gamedata[i].HomeTeam },
 				{ $inc : 
 					{	"PointsScored" : gamedata[i].HomeScore,
@@ -132,7 +129,7 @@ Meteor.startup(function () {
 					}
 				}
 			);
-			Games.update(
+			Teams.update(
 				{ "_id" : gamedata[i].AwayTeam },
 				{ $inc : 
 					{	"PointsScored" : gamedata[i].AwayScore,
@@ -147,7 +144,7 @@ Meteor.startup(function () {
 		}
     }
 
-	teamdata = Teams.find().fetch();
+	teamdata = Teams.find({}).fetch();
 
 	for (i = 0; i < teamdata.length; i++) {
 		Teams.update(
