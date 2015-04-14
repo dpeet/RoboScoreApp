@@ -1,0 +1,44 @@
+<template name="leaderboard">
+    <!--<ul>-->
+        <!--{{#each team}}-->
+            <!--<li class="team ">{{TeamNum}}: {{W}}</li>-->
+        <!--{{/each}}-->
+        <!--&lt;!&ndash;{{#if showSelectedPlayer}}&ndash;&gt;-->
+            <!--&lt;!&ndash;<li>Selected Player: {{showSelectedPlayer.name}}</li>&ndash;&gt;-->
+        <!--&lt;!&ndash;{{/if}}&ndash;&gt;-->
+    <!--</ul>-->
+    <div id="standingsPage">
+        <table id="standingsTable" class="table table-hover table-striped tablesorter">
+            <thead id="teamsTableHeader">
+            <tr id="teamsTableHeaderRow">
+                <th id="TeamNum">Team Number</th>
+                <th id="TeamName">Team Name</th>
+                <th id="W">W</th>
+                <th id="L">L</th>
+                <th id="T">T</th>
+                <th id="W">Team Points</th>
+                <th id="W">Points Scored</th>
+                <th id="L">Points Against</th>
+                <th id="T">Point Differential</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each team}}
+                <tr class="teamRow">
+                    <td>{{TeamNum}}</td>
+                    <td>{{TeamName}}</td>
+                    <td>{{W}}</td>
+                    <td>{{L}}</td>
+                    <td>{{T}}</td>
+                    <td>{{TeamPts}}</td>
+                    <td>{{PointsScored}}</td>
+                    <td>{{PointsAgainst}}</td>
+                    <td>{{PointDifferential}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+        <hr>
+    </div>
+
+</template>
