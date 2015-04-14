@@ -1,51 +1,160 @@
 
 Meteor.startup(function () {
   //if ((Teams.find().count() == 0)) {
-  Teams.remove({})
+  Teams.remove({});
     console.log('No records in Teams collection.  Adding temp teams');
 
     // and add some data
-    var data = [
+    var teamdata = [
       {
-        "TeamNum":"1",
-        "TeamName":"blah",
+        "TeamNum"		:"1",
+        "TeamName"		:"Aes Sedai",
         "W":0,
         "L":0,
-        "T":0,
-        "TeamPts":0,
-        "PointsScored":0,
-        "PointsAgainst":0,
-        "PointDifferential":0
+        "T":0
       },
 
-      {"TeamNum":"2", "TeamName":"the best", "W":1, "L":0, "T":0, "TeamPts":3, "PointsScored":0, "PointsAgainst":0, "PointDifferential":1},
-      {"TeamNum":"3", "TeamName":"404", "W":0, "L":1, "T":0, "TeamPts":0, "PointsScored":0, "PointsAgainst":0, "PointDifferential":7},
-      {"TeamNum":"4", "TeamName":"we got this", "W":0, "L":0, "T":1, "TeamPts":1, "PointsScored":0, "PointsAgainst":0, "PointDifferential":4},
-      {"TeamNum":"5", "TeamName":"5", "W":0, "L":0, "T":1, "TeamPts":1, "PointsScored":0, "PointsAgainst":0, "PointDifferential":8},
-      {"TeamNum":"6", "TeamName":"6", "W":0, "L":0, "T":0, "TeamPts":0, "PointsScored":0, "PointsAgainst":0, "PointDifferential":0},
-      {"TeamNum":"7", "TeamName":"7", "W":0, "L":0, "T":0, "TeamPts":0, "PointsScored":0, "PointsAgainst":0, "PointDifferential":0},
-      {"TeamNum":"8", "TeamName":"8", "W":0, "L":0, "T":0, "TeamPts":0, "PointsScored":0, "PointsAgainst":0, "PointDifferential":0},
-      {"TeamNum":"9", "TeamName":"9", "W":0, "L":0, "T":0, "TeamPts":0, "PointsScored":0, "PointsAgainst":0, "PointDifferential":0},
-      {"TeamNum":"10", "TeamName":"10", "W":0, "L":0, "T":0, "TeamPts":0, "PointsScored":0, "PointsAgainst":0, "PointDifferential":0},
-      {"TeamNum":"11", "TeamName":"11", "W":0, "L":0, "T":0, "TeamPts":0, "PointsScored":0, "PointsAgainst":0, "PointDifferential":0},
-      {"TeamNum":"12", "TeamName":"12", "W":0, "L":0, "T":0, "TeamPts":0, "PointsScored":0, "PointsAgainst":0, "PointDifferential":0},
+      {"TeamNum":"2", "TeamName":"Band of the Red Hand", "W":1, "L":0, "T":0},
+      {"TeamNum":"3", "TeamName":"Children of the Light", "W":0, "L":1, "T":0},
+      {"TeamNum":"4", "TeamName":"Warders", "W":0, "L":0, "T":1},
+      {"TeamNum":"5", "TeamName":"Manetheron", "W":0, "L":0, "T":18},
+      {"TeamNum":"6", "TeamName":"Ashaman", "W":0, "L":0, "T":0},
+      {"TeamNum":"7", "TeamName":"Ogiers", "W":0, "L":0, "T":0},
+      {"TeamNum":"8", "TeamName":"Aiel", "W":0, "L":0, "T":0},
+      {"TeamNum":"9", "TeamName":"Wisdoms", "W":0, "L":0, "T":0},
+      {"TeamNum":"10", "TeamName":"Greymen", "W":0, "L":0, "T":0},
+      {"TeamNum":"11", "TeamName":"Darkfriends", "W":0, "L":0, "T":0},
+      {"TeamNum":"12", "TeamName":"Trollocs", "W":0, "L":0, "T":0}
     ];
 
-    for (var i = 0; i < data.length; i++) {
-      Teams.insert({
-        TeamNum:   data[i].TeamNum,
-        TeamName:  data[i].TeamName,
-        W:  data[i].W,
-        L:  data[i].L,
-        T:  data[i].T,
-        TeamPts:  data[i].TeamPts,
-        PointsScored:  data[i].PointsScored,
-        PointsAgainst:  data[i].PointsAgainst,
-        PointDifferential:  data[i].PointDifferential,
-        createdAt: new Date()
-      });
-    }
+    for (var i = 0; i < teamdata.length; i++) {
+		Teams.insert({
+			TeamNum:	teamdata[i].TeamNum,
+			TeamName:	teamdata[i].TeamName,
+			W:  		teamdata[i].W,
+			L:			teamdata[i].L,
+			T:			teamdata[i].T,
+			TeamPts:	0,
+			PointsScored:	0,
+			PointsAgainst:	0,
+			PointDifferential:	0,
+			CreatedAt:	new Date()
+		});
+	}
     console.log('12 records successfully added to Teams collection.');
     //console.log(Teams.find().fetch());
     console.log('Teams collection initialized and ready.');
+
+
+	Games.remove({});
+    console.log('No records in Games collection.  Adding temp games');
+
+	teamdata = Teams.find().fetch();
+
+    var gamedata = [
+      {
+        "Field"			: 1,
+        "HomeTeam"		: teamdata[0]._id,
+        "HomeScore"		: 1,
+        "AwayTeam"		: teamdata[1]._id,
+        "AwayScore"		: 2,
+        "Started"		: true,
+        "Final"			: true,
+		"ScheduledTime"	: new Date()
+      },
+
+      {"Field":2, "HomeTeam":teamdata[2]._id, "HomeScore":0, "AwayTeam":teamdata[3]._id, "AwayScore":3, "Started":true, "Final":true, "ScheduledTime":new Date()},
+      {"Field":3, "HomeTeam":teamdata[4]._id, "HomeScore":2, "AwayTeam":teamdata[5]._id, "AwayScore":1, "Started":true, "Final":true, "ScheduledTime":new Date()},
+      {"Field":4, "HomeTeam":teamdata[0]._id, "HomeScore":4, "AwayTeam":teamdata[2]._id, "AwayScore":2, "Started":true, "Final":true, "ScheduledTime":new Date()},
+      {"Field":5, "HomeTeam":teamdata[1]._id, "HomeScore":5, "AwayTeam":teamdata[3]._id, "AwayScore":5, "Started":true, "Final":false, "ScheduledTime":new Date()},
+      {"Field":6, "HomeTeam":teamdata[4]._id, "HomeScore":3, "AwayTeam":teamdata[5]._id, "AwayScore":3, "Started":true, "Final":true, "ScheduledTime":new Date()},
+      {"Field":1, "HomeTeam":teamdata[0]._id, "HomeScore":0, "AwayTeam":teamdata[3]._id, "AwayScore":0, "Started":true, "Final":false, "ScheduledTime":new Date()},
+      {"Field":2, "HomeTeam":teamdata[1]._id, "HomeScore":5, "AwayTeam":teamdata[4]._id, "AwayScore":3, "Started":true, "Final":false, "ScheduledTime":new Date()},
+      {"Field":3, "HomeTeam":teamdata[2]._id, "HomeScore":2, "AwayTeam":teamdata[5]._id, "AwayScore":1, "Started":true, "Final":true, "ScheduledTime":new Date()},
+      {"Field":4, "HomeTeam":teamdata[0]._id, "HomeScore":1, "AwayTeam":teamdata[1]._id, "AwayScore":0, "Started":true, "Final":true, "ScheduledTime":new Date()},
+      {"Field":5, "HomeTeam":teamdata[2]._id, "HomeScore":0, "AwayTeam":teamdata[3]._id, "AwayScore":0, "Started":false, "Final":false, "ScheduledTime":new Date()},
+      {"Field":6, "HomeTeam":teamdata[4]._id, "HomeScore":4, "AwayTeam":teamdata[5]._id, "AwayScore":8, "Started":true, "Final":true, "ScheduledTime":new Date()}
+    ];
+    for (i = 0; i < gamedata.length; i++) {
+      Games.insert({
+        Field:	gamedata[i].Field,
+        HomeTeam:		gamedata[i].HomeTeam,
+        HomeScore:		gamedata[i].HomeScore,
+        AwayTeam:		gamedata[i].AwayTeam,
+        AwayScore:		gamedata[i].AwayScore,
+        Started:		gamedata[i].Started,
+        Final:			gamedata[i].Final,
+        ScheduledTime:	new Date(),
+		CreatedAt:		new Date()
+      });
+    }
+    console.log('12 records successfully added to Games collection.');
+    //console.log(Teams.find().fetch());
+    console.log('Games collection initialized and ready.');
+
+	console.log('Adjusting teams based on games collection');
+
+	gamedata = Games.find().fetch();
+
+	var w = 0;
+	var l = 0;
+	var t = 0;
+	var aw = 0;
+	var al = 0;
+
+    for (i = 0; i < gamedata.length; i++) {
+		w = 0;
+		l = 0;
+		t = 0;
+		aw = 0;
+		al = 0;
+
+		if (gamedata[i].Started && gamedata[i].Final) {
+			if (gamedata[i].HomeScore > gamedata[i].AwayScore) {
+				w = 1;
+				al = 1;
+			} else if (gamedata[i].HomeScore < gamedata[i].AwayScore) {
+				l = 1;
+				aw = 1;
+			} else {
+				t = 1;
+			}
+
+			Games.update(
+				{ "_id" : gamedata[i].HomeTeam },
+				{ $inc : 
+					{	"PointsScored" : gamedata[i].HomeScore,
+						"PointsAgainst" : gamedata[i].AwayScore,
+						"PointDifferential" : gamedata[i].HomeScore - gamedata[i].AwayScore,
+						"W" : w,
+						"L" : l,
+						"T" : t
+					}
+				}
+			);
+			Games.update(
+				{ "_id" : gamedata[i].AwayTeam },
+				{ $inc : 
+					{	"PointsScored" : gamedata[i].AwayScore,
+						"PointsAgainst" : gamedata[i].HomeScore,
+						"PointDifferential" : gamedata[i].AwayScore - gamedata[i].HomeScore,
+						"W" : aw,
+						"L" : al,
+						"T" : t
+					}
+				}
+			);
+		}
+    }
+
+	teamdata = Teams.find().fetch();
+
+	for (i = 0; i < teamdata.length; i++) {
+		Teams.update(
+			{ "_id" : teamdata[i]._id },
+			{ $set :
+				{ "TeamPts" : teamdata[i].W*2 + teamdata[i].T }
+			}
+		);
+	}
 });
