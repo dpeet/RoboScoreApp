@@ -1,5 +1,12 @@
 Meteor.subscribe('Teams');
 
+Router.map(function(){
+  this.route('standingsPage', {
+    path: '/standings',
+    template: "standingsPage"
+  });
+});
+
 Template.standingsPage.helpers({
     'team': function(){
         return Teams.find(

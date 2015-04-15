@@ -11,13 +11,6 @@ Router.configure({
 });
 
 
-//Router.route('/', function () {
-//  this.render('standingsPage');
-//});
-//
-
-
-
 Router.map(function(){
   this.route('homeRoute', {
     path: '/',
@@ -25,6 +18,6 @@ Router.map(function(){
   });
 });
 
-Router.route('/standings', function () {
-  this.render('standingsPage');
-});
+// Router.route('/standings', function () {
+//   this.render('standingsPage');
+// });
