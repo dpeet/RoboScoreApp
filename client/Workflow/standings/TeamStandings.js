@@ -12,6 +12,5 @@ Template.standingsPage.helpers({
         return Teams.find(
             {}, {sort: {TeamPts: -1, PointDifferential: -1}}
         );
-
     }
 });
