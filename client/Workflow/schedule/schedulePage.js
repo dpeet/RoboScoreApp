@@ -1,14 +1,5 @@
 Meteor.subscribe('Games');
 
-//------------------------------------------------
-// ROUTING
-
-Router.map(function(){
-  this.route('schedulePage', {
-    path: '/Schedule',
-    template: 'schedulePage'
-  });
-});
 
 //------------------------------------------------
 // HELPERS
@@ -16,7 +7,7 @@ Router.map(function(){
 Template.schedulePage.helpers({
   gamesList: function(){
     return Games.find(
-        {}, {sort: {ScheduledTime: -1}}
+        {}, {sort: {Round: 1, Field: 1}}
     )
   },
   getHomeTeamName: function(){
@@ -34,9 +25,8 @@ Template.schedulePage.helpers({
 
 Template.schedulePage.events({
   'click .gamesRow':function(){
-    console.log('/team/' + this._id);
-    Session.set('selectedTeam', this._id);
-    Router.go('/team/' + this._id);
+    Session.set('selectedGame', this._id);
+    Router.go('/game/' + this._id);
     //alert(this._id);
   }
 });

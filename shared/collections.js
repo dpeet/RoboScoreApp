@@ -25,3 +25,5 @@ Games.allow({
     return true;
   }
 });
+
+//Session.setDefault("currRound", 0);

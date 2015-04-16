@@ -7,14 +7,14 @@
 
                 <div id="teamPreviewCard" class="card panel panel-default">
                     <div class="panel-heading">
-                        <h2><span id="TeamName">{{TeamName}}</span></h2>
-                        <h4 id="TeamNum">{{TeamNum}}</h4>
+                        <h2><span id="Teams">{{getHomeTeamName}} vs {{getAwayTeamName}}</span></h2>
                     </div>
                     <div class="panel-body">
-                        <h5 id="Wins">Wins: {{W}}</h5><!--clear-->
-                        <h5 id="Losses">Losses  {{L}}</h5>
-                        <h5 id="Ties">Ties  {{T}}</h5>
+                        <h5 id="HomeScore">Home Score: {{HomeScore}}</h5><!--clear-->
+                        <h5 id="AwayScore">Away Score: {{AwayScore}}</h5>
                         <hr>
+                        <h5 id="Date">Date  {{getFormattedDate}}</h5>
+                        
                         <!--
 
           <h5><a id="emailText" href="{{Email}}">{{Email}}</a></h5>
@@ -27,8 +27,8 @@
 -->
                     </div>
                     <div class="panel-footer">
-                        <button id="teamEditButton" class="btn btn-warning">Edit Customer</button>
-                        <button id="teamDeleteButton" class="btn btn-danger">Delete Customer</button>
+                        <button id="teamEditButton" class="btn btn-warning">Edit Game</button>
+                        <button id="teamDeleteButton" class="btn btn-danger">Delete Game</button>
                         <!-- <div>{{ _id }}</div> -->
                     </div>
                 </div>
