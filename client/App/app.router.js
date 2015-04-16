@@ -14,28 +14,57 @@ Router.configure({
 Router.map(function(){
     this.route('home', {
         path: '/',
-        template: "allMatches"
+        template: "fieldarray"
     });
-    // this.route('standings', {
-    //     path: '/standings',
-    //     template: "standingsPage"
-    // });
-    // this.route('teamPreviewPage', {
-    //     path: '/teams/:id',
-    //     template: 'teamPreviewPage',
-    //     data: function () {
-    //         return Teams.findOne({"TeamNum": this.params.id});
-    //     }
-    // });
-    this.route('schedulePage', {
+    this.route('standings', {
+        path: '/standings',
+        template: "standings"
+    });
+    this.route('game', {
+        path: '/games/:id',
+        template: 'game',
+        data: function () {
+            return Teams.findOne({TeamNum: this.params.id}); // TODO update this
+        }
+    });
+    this.route('schedule', {
         path: '/schedule',
-        template: 'schedulePage'
+        template: 'schedule'
+    });
+    this.route('fields', {
+        path: '/fields',
+        template: "fieldarray"
+    });
+    this.route('fields', {
+        path: '/fields/:fieldid',
+        template: "fieldpanel",
+        data: function () {
+            return Games.findOne({"Field":this.params.fieldid,"Started":true,"Final":false});; // TODO update this
+        }
     });
 });
 
-// Router.route('/standings', function () {
-//   this.render('standingsPage');
-// });
+/* YANKED FROM CUSTOMER UPSERT PAGE
+Router.map(function(){
+  this.route('customerUpsertPage', {
+    path: '/newcustomer',
+    template: 'customerUpsertPage',
+    waitOn: function(){
+      return Meteor.subscribe('customers');
+    }
+  });
+  this.route('customerUpsertPage', {
+    path: '/editcustomer/:id',
+    template: 'customerUpsertPage',
+    waitOn: function(){
+      return Meteor.subscribe('customers');
+    },
+    data: function(){
+      return Customers.findOne(this.params.id);
+    }
+  });
+});
+*/
 
 
 

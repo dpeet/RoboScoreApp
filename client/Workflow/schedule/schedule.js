@@ -1,10 +1,6 @@
 Meteor.subscribe('Games');
 
-
-//------------------------------------------------
-// HELPERS
-
-Template.schedulePage.helpers({
+Template.schedule.helpers({
   gamesList: function(){
     return Games.find(
         {}, {sort: {Round: 1, Field: 1}}
@@ -23,7 +19,7 @@ Template.schedulePage.helpers({
 });
 
 
-Template.schedulePage.events({
+Template.schedule.events({
   'click .gamesRow':function(){
     Session.set('selectedGame', this._id);
     Router.go('/game/' + this._id);

@@ -1,29 +1,16 @@
-Router.map(function(){
-  this.route('teamPreviewPage', {
-    path: '/game/:id',
-    template: 'teamPreviewPage',
-    data: function () {
-      return Games.findOne({_id: this.params.id});
-    }
-  });
-});
-
-
-
-
-Template.teamPreviewPage.events({
+Template.game.events({
   'click #teamEditButton':function(){
-    Router.go('/editteam/' + this._id);
+    Router.go('/editgame/' + this._id);
   },
   'click #teamDeleteButton':function(){
     if(confirm('Are you sure you want to delete the match:' + this.HomeTeam + "vs: " + this.AwayTeam + "?")){
-      Teams.remove({_id: this._id});
+      Games.remove({_id: this._id});
       Router.go('/');
     }
   }
 });
 
-Template.teamPreviewPage.helpers({
+Template.game.helpers({
   getHomeTeamName: function(){
     return Teams.findOne("" + this.HomeTeam).TeamName
   },

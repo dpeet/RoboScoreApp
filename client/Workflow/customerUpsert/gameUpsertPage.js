@@ -1,29 +1,4 @@
-
-Router.map(function(){
-  /*
-  this.route('customerUpsertPage', {
-    path: '/newcustomer',
-    template: 'customerUpsertPage',
-    waitOn: function(){
-      return Meteor.subscribe('customers');
-    }
-  });*/
-  this.route('customerUpsertPage', {
-    path: '/editcustomer/:id',
-    template: 'customerUpsertPage',
-    waitOn: function(){
-      return Meteor.subscribe('customers');
-    },
-    data: function(){
-      return Customers.findOne(this.params.id);
-    }
-  });
-});
-
-//-------------------------------------------------------------
-
-
-Template.customerUpsertPage.events({
+Template.gameUpsertPage.events({
   'keyup #firstNameInput':function(){
     Customers.update({_id: this._id}, {
       $set: {
@@ -117,7 +92,7 @@ Template.customerUpsertPage.events({
 
 //-------------------------------------------------------------
 
-Template.customerUpsertPage.helpers({
+Template.gameUpsertPage.helpers({
   getRecordId: function() {
     if(this._id) {
       return this._id;
@@ -127,7 +102,7 @@ Template.customerUpsertPage.helpers({
   }
 });
 
-Template.customerUpsertPage.events({
+Template.gameUpsertPage.events({
   'click #upsertCustomerButton': function() {
     console.log('creating new user...');
 
