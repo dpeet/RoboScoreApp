@@ -1,0 +1,30 @@
+<template name="schedulePage">
+  <div id="schedulePage">
+    <div class="container">
+      <table id="gamesTable" class="table table-hover table-striped tablesorter">
+        <thead id="gamesTableHeader">
+          <tr id="gamesTableHeaderRow">
+            <th id="HomeTeamCol">Home Team</th>
+            <th id="HomeScoreCol">Home Score</th>
+            <th id="AwayTeamCol">Away Team</th>
+            <th id="AwayScoreCol">Away Score</th>
+            <th id="ScheduledTimeCol">Scheduled Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each gamesList}}
+            <tr class="gamesRow">
+              <td>{{getHomeTeamName}}</td>
+              <td>{{HomeScore}}</td>
+              <td>{{getAwayTeamName}}</td>
+              <td>{{AwayScore}}</td>
+              <td>{{getFormattedDate}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <hr>
+    </div>
+  </div>
+</template>
+
