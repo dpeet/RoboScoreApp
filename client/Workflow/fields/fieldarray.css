@@ -1,0 +1,10 @@
+.panel-body h3, p {
+    text-align: center;
+}
+.panel-body .score {
+    text-align: center;
+    font-size: 300%;
+}
+.panel-body {
+    height: 250px;
+}

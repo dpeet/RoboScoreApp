@@ -1,14 +1,54 @@
-<template name="fieldpanel">
-	<div class="col-sm-4">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				Field {{Field}}
-			</div>
-			<div class="panel-body">
-				<p>Home: {{homeName}}</p>
-				<p>Away: {{awayName}}</p>
-			</div>
-		</div>
+<template name="onefield">
+	<div class="row">
+		{{> fieldpanel}}
 	</div>
 </template>
 
+<template name="fieldpanel">
+	<div class="panel panel-default">
+		<div class="panel-heading" style="text-align:center;">
+			<h1>{{Field}}</h1>
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-xs-6">
+					<h3>HOME</h3>
+					<p><b>{{homeName}}</b></p>
+				</div>
+				<div class="col-xs-6">
+					<h3>AWAY</h3>
+					<p><b>{{awayName}}</b></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6">
+					<hr />
+					<p class="score">{{HomeScore}}</p>
+				</div>
+				
+				<div class="col-xs-6">
+					<hr />
+					<p class="score">{{AwayScore}}</p>
+				</div>
+			</div>
+		</div>
+		{{#if admin}}
+		<div class="panel-footer">
+			<div class="row" style="margin-right:.5em;">
+				<div class="col-xs-3">
+            		<button id="{{_id}}" class="btn btn-danger homesub">-</button>
+				</div>
+				<div class="col-xs-3">
+            		<button id="{{_id}}" class="btn btn-success homeadd">+</button>
+				</div>
+				<div class="col-xs-3">
+            		<button id="{{_id}}" class="btn btn-danger awaysub">-</button>
+				</div>
+				<div class="col-xs-3">
+            		<button id="{{_id}}" class="btn btn-success awayadd">+</button>
+				</div>
+			</div>
+		</div>
+		{{/if}}
+	</div>
+</template>

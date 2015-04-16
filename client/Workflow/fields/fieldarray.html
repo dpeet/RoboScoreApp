@@ -1,8 +1,10 @@
 <template name="fieldarray">
     <h1>Fields</h1>
     <div class="row">
-    	{{#each fields}}
-    		{{>fieldpanel}}
-    	{{/each}}
+        {{#each fields}}
+            <div class="col-sm-6 col-md-4">
+                {{>fieldpanel}}
+            </div>
+        {{/each}}
 	</div>
 </template>

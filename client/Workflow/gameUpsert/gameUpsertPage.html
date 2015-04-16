@@ -1,0 +1,41 @@
+
+<template name="gameUpsertPage">
+  <div id="gameUpsertPage">
+      <div class="container">
+        <div class="col col-md-offset-3 col-md-6">
+          <div id="customerUpsertCard" class="panel panel-default">
+            <div class="panel-heading">
+              {{ getRecordId }}
+            </div>
+            <div class="panel-body">
+              <form id="customerForm" class="meteor-form">
+                <label id="TeamNameLabel" for="TeamNameInput">Team Name</label>
+                <input id="TeamNameInput" class="form-control" type="text" placeholder="Team Name" value="{{TeamName}}">
+
+                <label id="TeamNumLabel" for="TeamNumInput">Team Number</label>
+                <input id="TeamNumInput"  class="form-control" type="text" placeholder="Team Number" value="{{TeamNum}}">
+
+                <label id="WinsLabel" for="WinsInput">Wins</label>
+                <input id="WinsInput"  class="form-control" type="number" placeholder="0" value="{{W}}">
+
+                <label id="LossesLabel" for="LossesInput">Losses</label>
+                <input id="LossesInput"  class="form-control" type="number" placeholder="0" value="{{L}}">
+
+                <label id="TiesLabel" for="TiesInput">Ties</label>
+                <input id="TiesInput"  class="form-control" type="number" placeholder="0" value="{{T}}">
+
+                <label id="PointsScoredLabel" for="PointsScoredInput">Points Scored</label>
+                <input id="PointsScoredInput"  class="form-control" type="number" placeholder="0" value="{{PointsScored}}">
+
+                <label id="PointAgainstLabel" for="PointAgainstInput">Point Against</label>
+                <input id="PointAgainstInput"  class="form-control" type="number" placeholder="0" value="{{PointAgainst}}">
+              </form>
+            </div>
+            <div class="panel-footer">
+              <button id="upsertGameButton" type="button" class="fullwidth btn btn-info" width="100%">Save Game</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</template>

@@ -11,3 +11,5 @@ iron:router
 blaze
 fezvrasta:bootstrap-material-design
 momentjs:moment
+accounts-base
+accounts-password

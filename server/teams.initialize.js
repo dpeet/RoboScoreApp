@@ -1,4 +1,3 @@
-
 Meteor.startup(function () {
   //if ((Teams.find().count() == 0)) {
   Teams.remove({});

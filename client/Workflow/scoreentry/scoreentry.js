@@ -7,11 +7,3 @@ Template.standings.helpers({
         );
     }
 });
-
-Template.standings.events({
-  'click .teamRow':function(){
-    Session.set('selectedTeam', this._id);
-    Router.go('/team/' + this._id);
-    //alert(this._id);
-  }
-});
