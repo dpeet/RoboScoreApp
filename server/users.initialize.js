@@ -5,7 +5,7 @@ Meteor.startup(function () {
     
     
     if (Meteor.users.find({}).count() === 0) {
-    	Accounts.createUser({
+    	var admin = Accounts.createUser({
     		username: 'admin',
     		password: 'adminPass',
     		profile: {

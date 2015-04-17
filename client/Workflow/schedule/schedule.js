@@ -13,8 +13,7 @@ Template.schedule.helpers({
     return Teams.findOne("" + this.AwayTeam).TeamName
   },
   getFormattedDate: function(){
-    return moment(new Date(this.ScheduledTime)).format('h:mm:ss');
-    //return (new Date(this.ScheduledTime))//.toString("HH:mm")
+    return moment(new Date(this.ScheduledTime)).format('h:mm');
   }
 });
 

@@ -1,7 +1,13 @@
 Template.fieldpanel.helpers({
     admin : function() {
+        if(Meteor.user()!= null){
+            return true
+        }
         // TODO change for production
-        return true;
+        //return true;
+    },
+    formatTime: function(){
+        return moment(new Date(this.ScheduledTime)).format('h:mm');
     }
 });
 
