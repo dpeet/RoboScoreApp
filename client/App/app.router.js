@@ -20,20 +20,20 @@ Router.map(function(){
         path: '/standings',
         template: "standings"
     });
-    this.route('game', {
-        path: '/games/:id',
-        template: 'gameUpsertPage',
-        data: function () {
-            return Games.findOne({_id: this.params.id});
-        }
-    });
-    this.route('team', {
-        path: '/teams/:id',
-        template: 'teamUpsertPage',
-        data: function () {
-            return Teams.findOne({TeamNum: this.params.id});
-        }
-    });
+    // this.route('game', {
+    //     path: '/games/:id',
+    //     template: 'gameUpsertPage',
+    //     data: function () {
+    //         return Games.findOne({_id: this.params.id});
+    //     }
+    // });
+    // this.route('team', {
+    //     path: '/teams/:id',
+    //     template: 'teamUpsertPage',
+    //     data: function () {
+    //         return Teams.findOne({TeamNum: this.params.id});
+    //     }
+    // });
     this.route('schedule', {
         path: '/schedule',
         template: 'schedule'
@@ -42,13 +42,13 @@ Router.map(function(){
         path: '/fields',
         template: "fieldarray"
     });
-    this.route('field', {
-        path: '/fields/:fieldid',
-        template: "fieldpanel",
-        data: function () {
-            return Games.findOne({"Field":this.params.fieldid,"Started":true,"Final":false}); // TODO update this
-        }
-    });
+    // this.route('field', {
+    //     path: '/fields/:fieldid',
+    //     template: "fieldpanel",
+    //     data: function () {
+    //         return Games.findOne({"Field":this.params.fieldid,"Started":true,"Final":false}); // TODO update this
+    //     }
+    // });
     this.route('login', {
         path: '/login',
         template: "loginPage"

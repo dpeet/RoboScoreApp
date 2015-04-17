@@ -57,7 +57,7 @@ Meteor.startup(function () {
         "Started"		: true,
         "Final"			: true,
         "Round"			: 0,
-		"ScheduledTime"	: new Date("18 Apr 2015 9:30:00 -0400")
+				"ScheduledTime"	: new Date("18 Apr 2015 9:30:00 -0400")
       },
 
       {"Field":2, "HomeTeam":teamdata[2]._id, "HomeScore":0, "AwayTeam":teamdata[3]._id, "AwayScore":3, "Started":true, "Final":true, "Round": 0, "ScheduledTime":new Date("18 Apr 2015 9:30:00 -0400")},
@@ -83,6 +83,7 @@ Meteor.startup(function () {
         Final:			gamedata[i].Final,
         Round: 			gamedata[i].Round,
         ScheduledTime:	gamedata[i].ScheduledTime,
+        StartTime:	gamedata[i].ScheduledTime,
 		CreatedAt:		new Date()
       });
     }
