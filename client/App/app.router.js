@@ -22,9 +22,16 @@ Router.map(function(){
     });
     this.route('game', {
         path: '/games/:id',
-        template: 'game',
+        template: 'gameUpsertPage',
         data: function () {
-            return Teams.findOne({TeamNum: this.params.id}); // TODO update this
+            return Games.findOne({_id: this.params.id});
+        }
+    });
+    this.route('team', {
+        path: '/teams/:id',
+        template: 'teamUpsertPage',
+        data: function () {
+            return Teams.findOne({TeamNum: this.params.id});
         }
     });
     this.route('schedule', {
