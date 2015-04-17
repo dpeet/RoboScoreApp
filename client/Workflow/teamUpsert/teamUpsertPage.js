@@ -1,3 +1,5 @@
+//TODO this entire page
+
 Template.teamUpsertPage.events({
   'keyup #TeamNumInput':function(){
     Teams.update({_id: this._id}, {
@@ -80,7 +82,7 @@ Template.teamUpsertPage.events({
         Losses: $('#LossesInput').val(),
         Ties: $('#TiesInput').val(),
         PointsScored: $('#PointsScoredInput').val(),
-        PointAgainst: $('#PointAgainstInput').val(),
+        PointAgainst: $('#PointAgainstInput').val()
       };
 
       if(this._id){

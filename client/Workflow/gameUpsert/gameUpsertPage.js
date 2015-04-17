@@ -1,3 +1,5 @@
+//TODO this entire page
+
 Template.gameUpsertPage.events({
   'keyup #firstNameInput':function(){
     Games.update({_id: this._id}, {

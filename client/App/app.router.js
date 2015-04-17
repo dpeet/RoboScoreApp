@@ -46,7 +46,7 @@ Router.map(function(){
         path: '/fields/:fieldid',
         template: "fieldpanel",
         data: function () {
-            return Games.findOne({"Field":this.params.fieldid,"Started":true,"Final":false});; // TODO update this
+            return Games.findOne({"Field":this.params.fieldid,"Started":true,"Final":false}); // TODO update this
         }
     });
     this.route('login', {

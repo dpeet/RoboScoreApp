@@ -11,7 +11,7 @@ Template.standings.helpers({
 Template.standings.events({
   'click .teamRow':function(){
     Session.set('selectedTeam', this._id);
-    Router.go('/team/' + this._id);
+    Router.go('/teams/' + this._id);
     //alert(this._id);
-  }
+  } // TODO protect with login
 });

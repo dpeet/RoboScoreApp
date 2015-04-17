@@ -1,7 +1,9 @@
 Template.fieldarray.helpers({
   fields : function() {
     var fields = new Array();
-    
+
+
+    //TODO we need a better way to represent what's on and whats next
     var game;
     for (var i = 1; i<7; i++){
       game = Games.findOne({"Field":i,"Started":true,"Final":false});
@@ -13,4 +15,6 @@ Template.fieldarray.helpers({
     }
     return fields;
   }
+  // TODO looks wonky if it gets messed up (doesn't find a "next")
+
 });

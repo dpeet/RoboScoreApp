@@ -21,7 +21,7 @@ Template.schedule.helpers({
 Template.schedule.events({
   'click .gamesRow':function(){
     Session.set('selectedGame', this._id);
-    Router.go('/game/' + this._id);
+    Router.go('/games/' + this._id);
     //alert(this._id);
   }
 });
