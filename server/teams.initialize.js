@@ -1,6 +1,6 @@
 Meteor.startup(function () {
-  //Teams.remove({});
- 	//Games.remove({});
+  // Teams.remove({});
+ 	// Games.remove({});
   if ((Teams.find({}).count() == 0)) {
   
     console.log('No records in Teams collection.  Adding temp teams');
@@ -8,21 +8,21 @@ Meteor.startup(function () {
     // and add some data
     var teamdata = [
       {
-        "TeamNum"		:"1",
+        "TeamNum"		:1,
         "TeamName"		:"Aes Sedai"
       },
 
-      {"TeamNum":"2", "TeamName":"Band of the Red Hand"},
-      {"TeamNum":"3", "TeamName":"Children of the Light"},
-      {"TeamNum":"4", "TeamName":"Warders"},
-      {"TeamNum":"5", "TeamName":"Manetheren"},
-      {"TeamNum":"6", "TeamName":"Ashaman"},
-      {"TeamNum":"7", "TeamName":"Ogiers"},
-      {"TeamNum":"8", "TeamName":"Aiel"},
-      {"TeamNum":"9", "TeamName":"Wisdoms"},
-      {"TeamNum":"10", "TeamName":"Greymen"},
-      {"TeamNum":"11", "TeamName":"Darkfriends"},
-      {"TeamNum":"12", "TeamName":"Trollocs"}
+      {"TeamNum":2, "TeamName":"Band of the Red Hand"},
+      {"TeamNum":3, "TeamName":"Children of the Light"},
+      {"TeamNum":4, "TeamName":"Warders"},
+      {"TeamNum":5, "TeamName":"Manetheren"},
+      {"TeamNum":6, "TeamName":"Ashaman"},
+      {"TeamNum":7, "TeamName":"Ogiers"},
+      {"TeamNum":8, "TeamName":"Aiel"},
+      {"TeamNum":9, "TeamName":"Wisdoms"},
+      {"TeamNum":10, "TeamName":"Greymen"},
+      {"TeamNum":11, "TeamName":"Darkfriends"},
+      {"TeamNum":12, "TeamName":"Trollocs"}
     ];
 
     for (var i = 0; i < teamdata.length; i++) {
