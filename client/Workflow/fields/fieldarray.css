@@ -5,6 +5,15 @@
     text-align: center;
     font-size: 300%;
 }
+.finished {
+    background: #DDD;
+    /*
+    background: -webkit-radial-gradient(white, #EEE); /* Safari 5.1 to 6.0 
+    background: -o-radial-gradient(white, #EEE); /* For Opera 11.6 to 12.0 
+    background: -moz-radial-gradient(white, #EEE); /* For Firefox 3.6 to 15 
+    background: radial-gradient(white, #EEE); /* Standard syntax 
+    */
+}
 .fix-size {
     height: 250px;
 }

@@ -83,7 +83,8 @@ Template.fieldpanel.events({
         Games.update({ "_id" : event.target.id.toString()},
             {$set : { "Started" : true,
                     "HomeScore" : 0,
-                    "AwayScore" : 0
+                    "AwayScore" : 0,
+                    "Final"     : false
         }});
     },
 

@@ -9,6 +9,11 @@ Template.fieldarray.helpers({
         if (typeof game != 'undefined') {
           game.homeName = Teams.findOne({"_id": game.HomeTeam}).TeamName;
           game.awayName = Teams.findOne({"_id": game.AwayTeam}).TeamName;
+          if (game.Final) {
+            game.f = "finished";
+          } else {
+            game.f = "";
+          }
         }
         fields.push(game);
       }
