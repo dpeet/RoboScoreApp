@@ -1,6 +1,6 @@
 Meteor.startup(function () {
-  Teams.remove({});
- 	Games.remove({});
+  //Teams.remove({});
+ 	//Games.remove({});
   if ((Teams.find({}).count() == 0)) {
   
     console.log('No records in Teams collection.  Adding temp teams');
