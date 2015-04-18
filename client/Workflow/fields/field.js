@@ -4,10 +4,9 @@ Template.fieldpanel.helpers({
             return true
         }
         // TODO this works for now, but isn't really safe
-        //return true;
     },
     formatTime: function(){
-        return moment(new Date(this.ScheduledTime)).format('h:mm');
+        return moment(new Date(this.ScheduledTime)).format('h:mm A');
     }
 });
 
@@ -28,39 +27,85 @@ Template.fieldpanel.events({
         // console.log("awaysub " + event.target.id.toString());
         Games.update({ "_id" : event.target.id.toString()}, {$inc : { "AwayScore" : -1}});
     },
-    'click .finishmatch': function(event) {
+    'click .finish': function(event) {
         console.log("finishmatch " + event.target.id.toString());
-        cur = Games.findOne({"_id":event.target.id.toString()})
-        if (cur.started && !cur.final) {
-            Games.update({ "_id" : event.target.id.toString()}, {$set:{ "Final": true}});
-            // nextGame = Games.findOne({"Field":currGame.Field}, {"Round":(currGame.Round+1)});
-            // console.log("nextGame " + nextGame._id);
-        } else {
-            console.log("Couldn't finish the game - started:" + cur.started + ", final:" + cur.final);
-        }
-    },
-    'click .startmatch': function(event) {
-        console.log("startmatch " + event.target.id.toString());
-        var cur = Games.findOne({"_id": event.target.id.toString()});
+        var g = Games.findOne({ "_id" : event.target.id.toString() });
+        Games.update({ "_id" : event.target.id.toString()}, {$set:{ "Started": true,"Final": true}});
         
-        if (!cur.started && !cur.final) {
-            console.log("Starting game, setting startTime, resetting scores")
-            Games.update({ "_id" : event.target.id.toString()},
-                {$set : { "StartTime" : new Date(),
-                        "Started" : true,
-                        "HomeScore" : 0,
-                        "AwayScore" : 0
-                }});
-        } else {
-            console.log("Didn't start game - started:" + cur.started + ", final:" + cur.final);
-        }
+        w = 0;
+		l = 0;
+		t = 0;
+		aw = 0;
+		al = 0;
+        
+        if (g.HomeScore > g.AwayScore) {
+    		w = 1;
+    		al = 1;
+    	} else if (g.HomeScore < g.AwayScore) {
+    		l = 1;
+    		aw = 1;
+    	} else {
+    		t = 1;
+    	}
+    	
+		Teams.update(
+			{ "_id" : g.HomeTeam },
+			{ $inc : 
+				{	"PointsScored" : g.HomeScore,
+					"PointsAgainst" : g.AwayScore,
+					"PointDifferential" : g.HomeScore - g.AwayScore,
+					"W" : w,
+					"L" : l,
+					"T" : t
+				}
+			}
+		);
+		Teams.update(
+			{ "_id" : g.AwayTeam },
+			{ $inc : 
+				{	"PointsScored" : g.AwayScore,
+					"PointsAgainst" : g.HomeScore,
+					"PointDifferential" : g.AwayScore - g.HomeScore,
+					"W" : aw,
+					"L" : al,
+					"T" : t
+				}
+			}
+		);
+        
+        calcTeamPoints();
+        
+    },
+    'click .reset': function(event) {
+        console.log("startmatch " + event.target.id.toString());
+        
+        console.log("Starting game, resetting scores");
+        Games.update({ "_id" : event.target.id.toString()},
+            {$set : { "Started" : true,
+                    "HomeScore" : 0,
+                    "AwayScore" : 0
+        }});
     },
 
 
-    'click .panel-heading':function(){
-        Session.set('selectedField', this._id);
-        Router.go('/fields/' + this._id);
-        //alert(this._id);
-    } // TODO goes to undefined field
+    // 'click .panel-heading':function(){
+    //     Session.set('selectedField', this._id);
+    //     Router.go('/fields/' + this._id);
+    //     //alert(this._id);
+    // } // TODO goes to undefined field
 
 });
+
+function calcTeamPoints() {
+    console.log("Calculating team points");
+	var teamdata = Teams.find({}).fetch();
+
+	for (i = 0; i < teamdata.length; i++) {
+		Teams.update(
+			{ "_id" : teamdata[i]._id },
+			{ $set :
+				{ "TeamPts" : teamdata[i].W*3 + teamdata[i].T }
+			}
+		);
+	}
+}
