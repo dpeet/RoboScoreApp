@@ -1,0 +1,15 @@
+.btn:not(.btn-raised).btn-danger, .input-group-btn .btn:not(.btn-raised).btn-danger{
+    background-color: #ff5722;
+    color: white;
+}
+
+
+.btn:not(.btn-raised).btn-success, .input-group-btn .btn:not(.btn-raised).btn-success{
+    background-color: #4caf50;
+    color: white;
+}
+
+.btn:not(.btn-raised).btn-info, .input-group-btn .btn:not(.btn-raised).btn-info{
+    background-color: #03a9f4;
+    color: white;
+}

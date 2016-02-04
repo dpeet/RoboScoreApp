@@ -1,10 +1,58 @@
+/* centered columns styles */
+.btn:not(.btn-raised).btn-warning, .input-group-btn .btn:not(.btn-raised).btn-warning{
+    background-color: #ff5722;
+    color: white;
+}
+
+.btn:not(.btn-raised).btn-success, .input-group-btn .btn:not(.btn-raised).btn-success{
+    background-color: #4caf50;
+    color: white;
+}
+
+.row-centered {
+    text-align: center;
+}
+
+.col-centered {
+    display: inline-block;
+    float: none;
+    /* reset the text-align */
+    text-align: center;
+    /* inline-block space fix */
+    margin-right: -4px;
+
+}
+
+.col-fixed {
+    /* custom width */
+    width: 320px;
+}
+
+.col-min {
+    /* custom min width */
+    min-width: 320px;
+}
+
+.col-max {
+    /* custom max width */
+    max-width: 320px;
+}
+
+.fieldpanel {
+    /* custom min width */
+    min-width: 320px;
+    max-width: 320px;
+}
+
 .panel-body h4, p {
     text-align: center;
 }
+
 .panel-body .score {
     text-align: center;
     font-size: 300%;
 }
+
 .finished {
     background: #DDD;
     /*
@@ -14,6 +62,7 @@
     background: radial-gradient(white, #EEE); /* Standard syntax 
     */
 }
+
 .fix-size {
     height: 250px;
 }
