@@ -9,20 +9,20 @@ Meteor.startup(function () {
     var teamdata = [
       {
         "TeamNum"		:1,
-        "TeamName"		:"Aes Sedai"
+        "TeamName"		:"Purple Blue"
       },
 
-      {"TeamNum":2, "TeamName":"Band of the Red Hand"},
-      {"TeamNum":3, "TeamName":"Children of the Light"},
-      {"TeamNum":4, "TeamName":"Warders"},
-      {"TeamNum":5, "TeamName":"Manetheren"},
-      {"TeamNum":6, "TeamName":"Ashaman"},
-      {"TeamNum":7, "TeamName":"Ogiers"},
-      {"TeamNum":8, "TeamName":"Aiel"},
-      {"TeamNum":9, "TeamName":"Wisdoms"},
-      {"TeamNum":10, "TeamName":"Greymen"},
-      {"TeamNum":11, "TeamName":"Darkfriends"},
-      {"TeamNum":12, "TeamName":"Trollocs"}
+      {"TeamNum":2, "TeamName":"Orange Green"},
+      {"TeamNum":3, "TeamName":"Red Green"},
+      {"TeamNum":4, "TeamName":"Orange Purple"},
+      {"TeamNum":5, "TeamName":"Green Blue"},
+      {"TeamNum":6, "TeamName":"Purple Green"},
+      {"TeamNum":7, "TeamName":"Yellow Blue"},
+      {"TeamNum":8, "TeamName":"Red Purple"},
+      {"TeamNum":9, "TeamName":"Red Blue"},
+      {"TeamNum":10, "TeamName":"Yellow Green"},
+      {"TeamNum":11, "TeamName":"Orange Blue"},
+      {"TeamNum":12, "TeamName":"Yellow Purple"}
     ];
 
     for (var i = 0; i < teamdata.length; i++) {
@@ -61,46 +61,46 @@ Meteor.startup(function () {
 				"ScheduledTime": new Date("18 Apr 2015 9:30:00 AM -0400")
       },
 
-      {"Field":2, "HomeTeam":teamdata[2]._id,  "HomeScore":0, "AwayTeam":teamdata[3]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 1, "ScheduledTime":new Date("18 Apr 2015 9:30:00 AM -0400")},
-      {"Field":3, "HomeTeam":teamdata[4]._id,  "HomeScore":0, "AwayTeam":teamdata[5]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 1, "ScheduledTime":new Date("18 Apr 2015 9:30:00 AM -0400")},
-      {"Field":4, "HomeTeam":teamdata[6]._id,  "HomeScore":0, "AwayTeam":teamdata[7]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 1, "ScheduledTime":new Date("18 Apr 2015 9:30:00 AM -0400")},
-      {"Field":5, "HomeTeam":teamdata[8]._id,  "HomeScore":0, "AwayTeam":teamdata[9]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 1, "ScheduledTime":new Date("18 Apr 2015 9:30:00 AM -0400")},
-      {"Field":6, "HomeTeam":teamdata[10]._id, "HomeScore":0, "AwayTeam":teamdata[11]._id, "AwayScore":0, "Started":false, "Final":false, "Round": 1, "ScheduledTime":new Date("18 Apr 2015 9:30:00 AM -0400")},
+      {"Field":2, "HomeTeam":teamdata[4]._id,  "HomeScore":0, "AwayTeam":teamdata[5]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 1, "ScheduledTime":new Date("18 Apr 2015 9:30:00 AM -0400")},
+      {"Field":3, "HomeTeam":teamdata[8]._id,  "HomeScore":0, "AwayTeam":teamdata[9]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 1, "ScheduledTime":new Date("18 Apr 2015 9:30:00 AM -0400")},
+      {"Field":4, "HomeTeam":teamdata[10]._id,  "HomeScore":0, "AwayTeam":teamdata[11]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 1, "ScheduledTime":new Date("18 Apr 2015 9:30:00 AM -0400")},
+      {"Field":5, "HomeTeam":teamdata[6]._id,  "HomeScore":0, "AwayTeam":teamdata[7]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 1, "ScheduledTime":new Date("18 Apr 2015 9:30:00 AM -0400")},
+      {"Field":6, "HomeTeam":teamdata[2]._id, "HomeScore":0, "AwayTeam":teamdata[3]._id, "AwayScore":0, "Started":false, "Final":false, "Round": 1, "ScheduledTime":new Date("18 Apr 2015 9:30:00 AM -0400")},
       
-      {"Field":1, "HomeTeam":teamdata[0]._id,  "HomeScore":0, "AwayTeam":teamdata[6]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 2, "ScheduledTime":new Date("18 Apr 2015 10:00:00 AM -0400")},
-      {"Field":2, "HomeTeam":teamdata[1]._id,  "HomeScore":0, "AwayTeam":teamdata[7]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 2, "ScheduledTime":new Date("18 Apr 2015 10:00:00 AM -0400")},
-      {"Field":3, "HomeTeam":teamdata[2]._id,  "HomeScore":0, "AwayTeam":teamdata[8]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 2, "ScheduledTime":new Date("18 Apr 2015 10:00:00 AM -0400")},
-      {"Field":4, "HomeTeam":teamdata[3]._id,  "HomeScore":0, "AwayTeam":teamdata[9]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 2, "ScheduledTime":new Date("18 Apr 2015 10:00:00 AM -0400")},
-      {"Field":5, "HomeTeam":teamdata[4]._id,  "HomeScore":0, "AwayTeam":teamdata[10]._id, "AwayScore":0, "Started":false, "Final":false, "Round": 2, "ScheduledTime":new Date("18 Apr 2015 10:00:00 AM -0400")},
-      {"Field":6, "HomeTeam":teamdata[5]._id,  "HomeScore":0, "AwayTeam":teamdata[11]._id, "AwayScore":0, "Started":false, "Final":false, "Round": 2, "ScheduledTime":new Date("18 Apr 2015 10:00:00 AM -0400")},
+      {"Field":1, "HomeTeam":teamdata[0]._id,  "HomeScore":0, "AwayTeam":teamdata[5]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 2, "ScheduledTime":new Date("18 Apr 2015 10:00:00 AM -0400")},
+      {"Field":2, "HomeTeam":teamdata[4]._id,  "HomeScore":0, "AwayTeam":teamdata[9]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 2, "ScheduledTime":new Date("18 Apr 2015 10:00:00 AM -0400")},
+      {"Field":3, "HomeTeam":teamdata[8]._id,  "HomeScore":0, "AwayTeam":teamdata[11]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 2, "ScheduledTime":new Date("18 Apr 2015 10:00:00 AM -0400")},
+      {"Field":4, "HomeTeam":teamdata[10]._id,  "HomeScore":0, "AwayTeam":teamdata[7]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 2, "ScheduledTime":new Date("18 Apr 2015 10:00:00 AM -0400")},
+      {"Field":5, "HomeTeam":teamdata[6]._id,  "HomeScore":0, "AwayTeam":teamdata[3]._id, "AwayScore":0, "Started":false, "Final":false, "Round": 2, "ScheduledTime":new Date("18 Apr 2015 10:00:00 AM -0400")},
+      {"Field":6, "HomeTeam":teamdata[2]._id,  "HomeScore":0, "AwayTeam":teamdata[1]._id, "AwayScore":0, "Started":false, "Final":false, "Round": 2, "ScheduledTime":new Date("18 Apr 2015 10:00:00 AM -0400")},
       
-      {"Field":1, "HomeTeam":teamdata[10]._id,  "HomeScore":0, "AwayTeam":teamdata[11]._id, "AwayScore":0, "Started":false, "Final":false, "Round": 3, "ScheduledTime":new Date("18 Apr 2015 10:30:00 AM -0400")},
-      {"Field":2, "HomeTeam":teamdata[9]._id,  "HomeScore":0, "AwayTeam":teamdata[5]._id,   "AwayScore":0, "Started":false, "Final":false, "Round": 3, "ScheduledTime":new Date("18 Apr 2015 10:30:00 AM -0400")},
-      {"Field":3, "HomeTeam":teamdata[8]._id,  "HomeScore":0, "AwayTeam":teamdata[4]._id,   "AwayScore":0, "Started":false, "Final":false, "Round": 3, "ScheduledTime":new Date("18 Apr 2015 10:30:00 AM -0400")},
-      {"Field":4, "HomeTeam":teamdata[3]._id, "HomeScore":0, "AwayTeam":teamdata[7]._id,    "AwayScore":0, "Started":false, "Final":false, "Round": 3, "ScheduledTime":new Date("18 Apr 2015 10:30:00 AM -0400")},
-      {"Field":5, "HomeTeam":teamdata[2]._id,  "HomeScore":0, "AwayTeam":teamdata[6]._id,   "AwayScore":0, "Started":false, "Final":false, "Round": 3, "ScheduledTime":new Date("18 Apr 2015 10:30:00 AM -0400")},
-      {"Field":6, "HomeTeam":teamdata[0]._id,  "HomeScore":0, "AwayTeam":teamdata[1]._id,   "AwayScore":0, "Started":false, "Final":false, "Round": 3, "ScheduledTime":new Date("18 Apr 2015 10:30:00 AM -0400")},
+      {"Field":1, "HomeTeam":teamdata[0]._id,  "HomeScore":0, "AwayTeam":teamdata[9]._id, "AwayScore":0, "Started":false, "Final":false, "Round": 3, "ScheduledTime":new Date("18 Apr 2015 10:30:00 AM -0400")},
+      {"Field":2, "HomeTeam":teamdata[4]._id,  "HomeScore":0, "AwayTeam":teamdata[11]._id,   "AwayScore":0, "Started":false, "Final":false, "Round": 3, "ScheduledTime":new Date("18 Apr 2015 10:30:00 AM -0400")},
+      {"Field":3, "HomeTeam":teamdata[8]._id,  "HomeScore":0, "AwayTeam":teamdata[7]._id,   "AwayScore":0, "Started":false, "Final":false, "Round": 3, "ScheduledTime":new Date("18 Apr 2015 10:30:00 AM -0400")},
+      {"Field":4, "HomeTeam":teamdata[10]._id, "HomeScore":0, "AwayTeam":teamdata[3]._id,    "AwayScore":0, "Started":false, "Final":false, "Round": 3, "ScheduledTime":new Date("18 Apr 2015 10:30:00 AM -0400")},
+      {"Field":5, "HomeTeam":teamdata[6]._id,  "HomeScore":0, "AwayTeam":teamdata[1]._id,   "AwayScore":0, "Started":false, "Final":false, "Round": 3, "ScheduledTime":new Date("18 Apr 2015 10:30:00 AM -0400")},
+      {"Field":6, "HomeTeam":teamdata[2]._id,  "HomeScore":0, "AwayTeam":teamdata[5]._id,   "AwayScore":0, "Started":false, "Final":false, "Round": 3, "ScheduledTime":new Date("18 Apr 2015 10:30:00 AM -0400")},
       
-      {"Field":1, "HomeTeam":teamdata[4]._id,  "HomeScore":0, "AwayTeam":teamdata[6]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 4, "ScheduledTime":new Date("18 Apr 2015 11:00:00 AM -0400")},
-      {"Field":2, "HomeTeam":teamdata[5]._id,  "HomeScore":0, "AwayTeam":teamdata[7]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 4, "ScheduledTime":new Date("18 Apr 2015 11:00:00 AM -0400")},
-      {"Field":3, "HomeTeam":teamdata[0]._id,  "HomeScore":0, "AwayTeam":teamdata[2]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 4, "ScheduledTime":new Date("18 Apr 2015 11:00:00 AM -0400")},
-      {"Field":4, "HomeTeam":teamdata[3]._id, "HomeScore":0, "AwayTeam":teamdata[1]._id,   "AwayScore":0, "Started":false, "Final":false, "Round": 4, "ScheduledTime":new Date("18 Apr 2015 11:00:00 AM -0400")},
-      {"Field":5, "HomeTeam":teamdata[11]._id,  "HomeScore":0, "AwayTeam":teamdata[8]._id, "AwayScore":0, "Started":false, "Final":false, "Round": 4, "ScheduledTime":new Date("18 Apr 2015 11:00:00 AM -0400")},
-      {"Field":6, "HomeTeam":teamdata[10]._id,  "HomeScore":0, "AwayTeam":teamdata[9]._id, "AwayScore":0, "Started":false, "Final":false, "Round": 4, "ScheduledTime":new Date("18 Apr 2015 11:00:00 AM -0400")},
+      {"Field":1, "HomeTeam":teamdata[0]._id,  "HomeScore":0, "AwayTeam":teamdata[11]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 4, "ScheduledTime":new Date("18 Apr 2015 11:00:00 AM -0400")},
+      {"Field":2, "HomeTeam":teamdata[4]._id,  "HomeScore":0, "AwayTeam":teamdata[7]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 4, "ScheduledTime":new Date("18 Apr 2015 11:00:00 AM -0400")},
+      {"Field":3, "HomeTeam":teamdata[8]._id,  "HomeScore":0, "AwayTeam":teamdata[3]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 4, "ScheduledTime":new Date("18 Apr 2015 11:00:00 AM -0400")},
+      {"Field":4, "HomeTeam":teamdata[10]._id, "HomeScore":0, "AwayTeam":teamdata[1]._id,   "AwayScore":0, "Started":false, "Final":false, "Round": 4, "ScheduledTime":new Date("18 Apr 2015 11:00:00 AM -0400")},
+      {"Field":5, "HomeTeam":teamdata[6]._id,  "HomeScore":0, "AwayTeam":teamdata[5]._id, "AwayScore":0, "Started":false, "Final":false, "Round": 4, "ScheduledTime":new Date("18 Apr 2015 11:00:00 AM -0400")},
+      {"Field":6, "HomeTeam":teamdata[2]._id,  "HomeScore":0, "AwayTeam":teamdata[9]._id, "AwayScore":0, "Started":false, "Final":false, "Round": 4, "ScheduledTime":new Date("18 Apr 2015 11:00:00 AM -0400")},
       
-      {"Field":1, "HomeTeam":teamdata[10]._id,  "HomeScore":0, "AwayTeam":teamdata[7]._id, "AwayScore":0, "Started":false, "Final":false, "Round": 5, "ScheduledTime":new Date("18 Apr 2015 11:30:00 AM -0400")},
-      {"Field":2, "HomeTeam":teamdata[5]._id,  "HomeScore":0, "AwayTeam":teamdata[1]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 5, "ScheduledTime":new Date("18 Apr 2015 11:30:00 AM -0400")},
-      {"Field":3, "HomeTeam":teamdata[0]._id,  "HomeScore":0, "AwayTeam":teamdata[3]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 5, "ScheduledTime":new Date("18 Apr 2015 11:30:00 AM -0400")},
-      {"Field":4, "HomeTeam":teamdata[4]._id, "HomeScore":0, "AwayTeam":teamdata[2]._id,   "AwayScore":0, "Started":false, "Final":false, "Round": 5, "ScheduledTime":new Date("18 Apr 2015 11:30:00 AM -0400")},
-      {"Field":5, "HomeTeam":teamdata[11]._id,  "HomeScore":0, "AwayTeam":teamdata[6]._id, "AwayScore":0, "Started":false, "Final":false, "Round": 5, "ScheduledTime":new Date("18 Apr 2015 11:30:00 AM -0400")},
-      {"Field":6, "HomeTeam":teamdata[9]._id,  "HomeScore":0, "AwayTeam":teamdata[8]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 5, "ScheduledTime":new Date("18 Apr 2015 11:30:00 AM -0400")},
+      {"Field":1, "HomeTeam":teamdata[0]._id,  "HomeScore":0, "AwayTeam":teamdata[7]._id, "AwayScore":0, "Started":false, "Final":false, "Round": 5, "ScheduledTime":new Date("18 Apr 2015 11:30:00 AM -0400")},
+      {"Field":2, "HomeTeam":teamdata[4]._id,  "HomeScore":0, "AwayTeam":teamdata[3]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 5, "ScheduledTime":new Date("18 Apr 2015 11:30:00 AM -0400")},
+      {"Field":3, "HomeTeam":teamdata[8]._id,  "HomeScore":0, "AwayTeam":teamdata[1]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 5, "ScheduledTime":new Date("18 Apr 2015 11:30:00 AM -0400")},
+      {"Field":4, "HomeTeam":teamdata[10]._id, "HomeScore":0, "AwayTeam":teamdata[5]._id,   "AwayScore":0, "Started":false, "Final":false, "Round": 5, "ScheduledTime":new Date("18 Apr 2015 11:30:00 AM -0400")},
+      {"Field":5, "HomeTeam":teamdata[6]._id,  "HomeScore":0, "AwayTeam":teamdata[9]._id, "AwayScore":0, "Started":false, "Final":false, "Round": 5, "ScheduledTime":new Date("18 Apr 2015 11:30:00 AM -0400")},
+      {"Field":6, "HomeTeam":teamdata[2]._id,  "HomeScore":0, "AwayTeam":teamdata[11]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 5, "ScheduledTime":new Date("18 Apr 2015 11:30:00 AM -0400")},
       
-      {"Field":1, "HomeTeam":teamdata[5]._id,  "HomeScore":0, "AwayTeam":teamdata[3]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 6, "ScheduledTime":new Date("18 Apr 2015 12:00:00 PM -0400")},
-      {"Field":2, "HomeTeam":teamdata[10]._id,  "HomeScore":0, "AwayTeam":teamdata[1]._id, "AwayScore":0, "Started":false, "Final":false, "Round": 6, "ScheduledTime":new Date("18 Apr 2015 12:00:00 PM -0400")},
-      {"Field":3, "HomeTeam":teamdata[8]._id,  "HomeScore":0, "AwayTeam":teamdata[7]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 6, "ScheduledTime":new Date("18 Apr 2015 12:00:00 PM -0400")},
-      {"Field":4, "HomeTeam":teamdata[0]._id, "HomeScore":0, "AwayTeam":teamdata[4]._id,   "AwayScore":0, "Started":false, "Final":false, "Round": 6, "ScheduledTime":new Date("18 Apr 2015 12:00:00 PM -0400")},
-      {"Field":5, "HomeTeam":teamdata[11]._id,  "HomeScore":0, "AwayTeam":teamdata[2]._id, "AwayScore":0, "Started":false, "Final":false, "Round": 6, "ScheduledTime":new Date("18 Apr 2015 12:00:00 PM -0400")},
-      {"Field":6, "HomeTeam":teamdata[9]._id,  "HomeScore":0, "AwayTeam":teamdata[6]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 6, "ScheduledTime":new Date("18 Apr 2015 12:00:00 PM -0400")}
+      {"Field":1, "HomeTeam":teamdata[0]._id,  "HomeScore":0, "AwayTeam":teamdata[3]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 6, "ScheduledTime":new Date("18 Apr 2015 12:00:00 PM -0400")},
+      {"Field":2, "HomeTeam":teamdata[4]._id,  "HomeScore":0, "AwayTeam":teamdata[1]._id, "AwayScore":0, "Started":false, "Final":false, "Round": 6, "ScheduledTime":new Date("18 Apr 2015 12:00:00 PM -0400")},
+      {"Field":3, "HomeTeam":teamdata[8]._id,  "HomeScore":0, "AwayTeam":teamdata[5]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 6, "ScheduledTime":new Date("18 Apr 2015 12:00:00 PM -0400")},
+      {"Field":4, "HomeTeam":teamdata[10]._id, "HomeScore":0, "AwayTeam":teamdata[9]._id,   "AwayScore":0, "Started":false, "Final":false, "Round": 6, "ScheduledTime":new Date("18 Apr 2015 12:00:00 PM -0400")},
+      {"Field":5, "HomeTeam":teamdata[6]._id,  "HomeScore":0, "AwayTeam":teamdata[11]._id, "AwayScore":0, "Started":false, "Final":false, "Round": 6, "ScheduledTime":new Date("18 Apr 2015 12:00:00 PM -0400")},
+      {"Field":6, "HomeTeam":teamdata[2]._id,  "HomeScore":0, "AwayTeam":teamdata[7]._id,  "AwayScore":0, "Started":false, "Final":false, "Round": 6, "ScheduledTime":new Date("18 Apr 2015 12:00:00 PM -0400")}
     ];
     for (i = 0; i < gamedata.length; i++) {
       Games.insert({
